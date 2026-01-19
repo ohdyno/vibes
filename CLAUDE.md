@@ -150,13 +150,17 @@ Follow conventional commit format:
 
 ```
 <type>(<scope>): <description>
-
-[optional body]
 ```
+
+### Guidelines
+
+- **Concise** - Keep messages short and to the point
+- **Goal-oriented** - Explain the *why*, not the *how*
+- **No implementation details** - Don't list files changed or techniques used
 
 Types: `feat`, `fix`, `test`, `refactor`, `docs`, `chore`
 
 Examples:
 - `feat(core): add vibration frequency calculator`
-- `test(frequency): add scenarios for edge cases`
 - `fix(parser): handle empty input gracefully`
+- `chore: scaffold TDD/BDD project with kaocha-cucumber`
