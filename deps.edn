@@ -1,0 +1,15 @@
+{:paths ["src"]
+
+ :deps {}
+
+ :aliases
+ {:test {:extra-paths ["test" "test/step_definitions"]
+         :extra-deps {lambdaisland/kaocha {:mvn/version "1.91.1392"}
+                      lambdaisland/kaocha-cucumber {:mvn/version "0.11.100"}}
+         :main-opts ["-m" "kaocha.runner"]}
+
+  :format {:extra-deps {dev.weavejester/cljfmt {:mvn/version "0.13.0"}}
+           :main-opts ["-m" "cljfmt.main" "fix" "src" "test"]}
+
+  :format-check {:extra-deps {dev.weavejester/cljfmt {:mvn/version "0.13.0"}}
+                 :main-opts ["-m" "cljfmt.main" "check" "src" "test"]}}}
