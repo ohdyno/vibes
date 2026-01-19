@@ -1,5 +1,6 @@
 (ns step-definitions.event-stream-steps
-  (:require [lambdaisland.cucumber.dsl :refer :all]
+  (:require [clojure.test :refer [is]]
+            [lambdaisland.cucumber.dsl :refer :all]
             [vibes.core :as vibes]))
 
 (Given "an empty event store" [state]
@@ -12,8 +13,7 @@
 
 (Then "the stream {string} should have {int} event(s)" [state stream-id expected-count]
       (let [events (vibes/load-events (:store state) stream-id)]
-        (assert (= expected-count (count events))
-                (str "Expected " expected-count " events but got " (count events))))
+        (is (= expected-count (count events))))
       state)
 
 (And "I append an {string} event with data {string} to stream {string}" [state event-type data stream-id]
@@ -33,7 +33,5 @@
             matching (filter #(and (= expected-type (:event-type %))
                                    (= expected-data (:data %)))
                              (:loaded-events state))]
-        (assert (seq matching)
-                (str "Expected event " expected-type " with data " expected-data
-                     " not found in " (:loaded-events state))))
+        (is (seq matching)))
       state)
