@@ -1,4 +1,4 @@
-# Vibes
+# Vib*ES*
 
 Event sourcing library filled with vibes.
 
