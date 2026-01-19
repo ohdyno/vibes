@@ -13,7 +13,7 @@ Prioritized behaviors for the Vib*ES* event sourcing library.
 
 ### Stream Basics
 
-- [ ] Append a single event to a new stream
+- [x] Append a single event to a new stream
 - [ ] Load events from a stream
 - [ ] Append multiple events to an existing stream
 - [ ] Load events from an empty/non-existent stream
