@@ -3,4 +3,6 @@
           :type :kaocha.type/cucumber
           :source-paths ["src"]
           :test-paths ["test/features"]
-          :cucumber/glue-paths ["test/step_definitions"]}]}
+          :cucumber/glue-paths ["test/step_definitions"]}]
+ :plugins [:kaocha.plugin/junit-xml]
+ :kaocha.plugin.junit-xml/target-file "target/junit.xml"}
